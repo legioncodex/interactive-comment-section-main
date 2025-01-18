@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <template class="input-template">
+      <div class="comment-input comment-flex">
+        <img src="" alt="" class="avater" />
+        <textarea name="" id="" placeholder="Add a comment..."></textarea>
+        <button class="send-reply">REPLY</button>
+      </div>
+    </template>
+    <template class="comment-template">
+      <div class="comment-wrp">
+        <div class="comment-input-wrp input-wrp">
+          <div class="comment">
+            <div class="score-section">
+              <button class="increment-button">
+                <img src="images/icon-plus.svg" />
+              </button>
+              <div class="score"></div>
+              <button class="decrement-button">
+                <img src="images/icon-minus.svg" />
+              </button>
+            </div>
+            <div class="info-section">
+              <div class="comment-info">
+                <div class="user-info">
+                  <img class="avatar" src="" alt="" />
+                  <div class="username"></div>
+                  <div class="you">you</div>
+                  <div class="date"></div>
+                </div>
+                <div class="d-e-r">
+                  <button class="delete-input">
+                    <img src="images/icon-delete.svg" />Delete
+                  </button>
+                  <button class="edit-input">
+                    <img src="images/icon-edit.svg" />Edit
+                  </button>
+                  <button class="reply-input">
+                    <img src="images/icon-reply.svg" />Reply
+                  </button>
+                </div>
+              </div>
+              <div class="comment-text">
+                <span class="c-text"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="replies"></div>
+      </div>
+    </template>
+    <template class="replies-template">
+      <div class="reply-input-wrp input-wrp">
+        <div class="comment">
+          <div class="score-section">
+            <button class="increment-button">
+              <img src="images/icon-plus.svg" />
+            </button>
+            <div class="score"></div>
+            <button class="decrement-button">
+              <img src="images/icon-minus.svg" />
+            </button>
+          </div>
+          <div class="info-section">
+            <div class="comment-info">
+              <div class="user-info">
+                <img class="avatar" src="" alt="" />
+                <div class="username"></div>
+                <div class="you">you</div>
+                <div class="date"></div>
+              </div>
+              <div class="d-e-r">
+                <button class="delete-input">
+                  <img src="images/icon-delete.svg" />Delete
+                </button>
+                <button class="edit-input">
+                  <img src="images/icon-edit.svg" />Edit
+                </button>
+                <button class="reply-input">
+                  <img src="images/icon-reply.svg" />Reply
+                </button>
+              </div>
+            </div>
+            <div class="comment-text">
+              <span class="replyTo"></span>
+              <span class="c-text"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <div class="comment-container"></div>
+    <div class="comment-input-wrp2">
+      <div class="comment-input comment-flex1">
+        <div class="avatars">
+          <div id="user1">
+            <img
+              src="./images/avatars/image-amyrobson.png"
+              alt=""
+            />
+            <span>Amyrobson</span>
+          </div>
+          <div id="user2">
+            <img
+              src="./images/avatars/image-juliusomo.png"
+              alt=""
+            />
+            <span>Juliusomo</span>
+          </div>
+          <div id="user3">
+            <img
+              src="./images/avatars/image-maxblagun.png"
+              alt=""
+            />
+            <span>maxblagun</span>
+          </div>
+          <div id="user4">
+            <img
+              src="./images/avatars/image-ramsesmiron.png"
+              alt=""
+            />
+            <span>Juliusomo</span>
+          </div>
+        </div>
+        <!-- <img src="./images/avatars/image-juliusomo.png" alt="" /> -->
+        <textarea name="" id="" placeholder="Add a comment..."></textarea>
+        <button class="send">SEND</button>
+      </div>
+    </div>
+
+    <div id="dialog" class="dialog">
+      <div class="dialog-content">
+        <h3>Delete comment</h3>
+        <p>
+          Are you sure you want to delete this comment? This will remove the
+          comment and cant be undone
+        </p>
+        <div>
+          <button id="cancelBtn">NO, CANCEL</button>
+          <button id="deleteBtn">YES, DELETE</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+    <script src="script2.js"></script>
+    <script src="script3.js"></script>
+    <script src="script4.js"></script>
+    <script src="script5.js"></script>
+  </body>
+</html>
