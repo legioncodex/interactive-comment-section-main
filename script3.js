@@ -22,7 +22,8 @@ const Comment = (comments, textarea, currentUser, container) => {
   const commentElement = temp.querySelector(".comment-wrp");
   commentElement.setAttribute("data-id", id);
   Create(newComment, container, temp, comments);
-
+  commentElement.scrollIntoView({ behavior: "smooth", block: "end" });
+  
   textarea.value = "";
   D_E_R(currentUser);
 
@@ -58,6 +59,8 @@ const Reply = (comments, textarea, currentUser, container, commentId) => {
   const commentElement = temp.querySelector(".reply-input-wrp");
   commentElement.setAttribute("data-id", id);
   Create(newReply, container, temp, comments);
+  commentElement.scrollIntoView({ behavior: "smooth", block: "end" });
+
 
   textarea.value = "";
   D_E_R(newReply.user.username);

@@ -60,11 +60,9 @@ const shiftDown = (e) => {
 
 window.addEventListener("resize", flex);
 
-const users = (getUsers) => {
-  console.log("1");
+function users(getUsers,comments) {
   document.querySelector(".avatars").addEventListener("dblclick", () => {
     // document.querySelector(".avatars span").styles.display = "block";
-    console.log("2");
     document.querySelectorAll(".comment-flex").forEach((input) => {
       input.remove();
     });
@@ -87,6 +85,77 @@ const users = (getUsers) => {
         );
         D_E_R();
         // event.stopPropagation();
+
+        document.querySelectorAll(".reply-input").forEach((replyButton) => {
+          replyButton.onclick = (event) => {
+            const replyInput = event.target.closest(".input-wrp");
+            const temp = document
+              .querySelector(".input-template")
+              .content.cloneNode(true);
+            if (!replyInput.querySelector(".comment-input")) {
+              temp.querySelector("img").src = JSON.parse(
+                localStorage.currentUser
+              ).image.png;
+              replyInput.append(temp);
+              flex();
+
+              const textArea = replyInput.querySelector("textarea");
+              textArea.focus();
+
+              const sendReply = (event) => {
+                const commentText = textArea.value.trim();
+                if (commentText) {
+                  const commentElement = replyInput.closest(".comment-wrp");
+                  const commentId = parseInt(
+                    commentElement.getAttribute("data-id")
+                  );
+                  const commentIndex = comments.findIndex(
+                    (comment) => comment.id === commentId
+                  );
+
+                  const repliedTo = event.target
+                    .closest(".input-wrp")
+                    .querySelector(".username").textContent;
+
+                  Reply(
+                    comments,
+                    textArea,
+                    repliedTo,
+                    replyInput
+                      .closest(".comment-wrp")
+                      .querySelector(".replies"),
+                    commentIndex
+                  );
+
+                  replyInput.querySelector(".comment-input").remove();
+                } else {
+                  alert("Comment cannot be empty");
+                }
+              };
+
+              replyInput
+                .querySelector(".send-reply")
+                .addEventListener("click", (event) => {
+                  sendReply(event);
+                });
+
+              replyInput
+                .querySelector(".cancel-reply")
+                .addEventListener("click", (event) => {
+                  replyInput.querySelector(".comment-input").remove();
+                });
+
+              textArea.addEventListener("keydown", (event) => {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  sendReply(event);
+                }
+              });
+            } else {
+              replyInput.querySelector(".comment-input").remove();
+            }
+          };
+        });
       };
     });
   });

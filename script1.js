@@ -22,7 +22,6 @@ function commentObj(
   this.replyingTo = replyingTo;
 }
 
-const commentContainer = document.querySelector(".comment-container");
 const textArea = document.querySelectorAll("textarea");
 textArea.forEach((input) => {
   input.addEventListener(
@@ -75,10 +74,10 @@ const UI = (comments, currentUser) => {
 
   incrementDecrement(comments);
 
-  users(getUsers);
+  users(getUsers,comments);
 
   document.querySelectorAll(".reply-input").forEach((replyButton) => {
-    replyButton.addEventListener("click", (event) => {
+    replyButton.onclick= (event) => {
       const replyInput = event.target.closest(".input-wrp");
       const temp = document
         .querySelector(".input-template")
@@ -126,6 +125,12 @@ const UI = (comments, currentUser) => {
             sendReply(event);
           });
 
+        replyInput
+          .querySelector(".cancel-reply")
+          .addEventListener("click", (event) => {
+            replyInput.querySelector(".comment-input").remove();
+          });
+
         textArea.addEventListener("keydown", (event) => {
           if (event.key === "Enter") {
             event.preventDefault();
@@ -135,7 +140,7 @@ const UI = (comments, currentUser) => {
       } else {
         replyInput.querySelector(".comment-input").remove();
       }
-    });
+    };
   });
 
   document.querySelectorAll(".delete-input").forEach((deleteButton) => {
@@ -186,6 +191,5 @@ const UI = (comments, currentUser) => {
       alert("Comment cannot be empty");
     }
 
-    document.documentElement.scrollTo(0, document.documentElement.scrollHeight);
   }
 };

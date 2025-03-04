@@ -1,6 +1,5 @@
 const Create = (comment, container, temp, comments) => {
   const { content, createdAt, score, user, replyingTo } = comment;
-console.log(comment);
   let created = (new Date() - createdAt) / 1000;
 
   temp.querySelector(".score").textContent = score;
@@ -38,3 +37,43 @@ console.log(comment);
 
   flex();
 };
+
+//dark mode
+const button = document.querySelector("[data-theme-toggle]");
+const localStorageTheme = localStorage.getItem("theme");
+const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+let currentThemeSetting = calculateSettingAsThemeString({
+  localStorageTheme,
+  systemSettingDark,
+});
+
+updateTheme({ theme: currentThemeSetting });
+
+function calculateSettingAsThemeString({
+  localStorageTheme,
+  systemSettingDark,
+}) {
+  if (localStorageTheme !== null) {
+    return localStorageTheme;
+  }
+
+  if (systemSettingDark.matches) {
+    return "dark";
+  }
+
+  return "light";
+}
+
+function updateTheme({ theme }) {
+  document.querySelector("html").setAttribute("data-theme", theme);
+}
+
+button.addEventListener("click", () => { 
+  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+  
+  localStorage.setItem("theme", newTheme);
+  updateTheme({ theme: newTheme });
+
+  currentThemeSetting = newTheme;
+})

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,10 @@
       <div class="comment-input comment-flex">
         <img src="" alt="" class="avater" />
         <textarea name="" id="" placeholder="Add a comment..."></textarea>
-        <button class="send-reply">REPLY</button>
+        <div class="">
+          <button class="send-reply">REPLY</button>
+          <button class="cancel-reply">CANCEL</button>
+        </div>
       </div>
     </template>
     <template class="comment-template">
@@ -102,36 +105,36 @@
         </div>
       </div>
     </template>
+
+    <div class="toggle-header">
+      <div class="toggle-container">
+        <button
+          class="toggle-dark-light-mode"
+          type="button"
+          data-theme-toggle
+          aria-label="Change to light theme"
+        ></button>
+      </div>
+    </div>
+
     <div class="comment-container"></div>
     <div class="comment-input-wrp2">
       <div class="comment-input comment-flex1">
         <div class="avatars">
           <div id="user1">
-            <img
-              src="./images/avatars/image-amyrobson.png"
-              alt=""
-            />
+            <img src="./images/avatars/image-amyrobson.png" alt="" />
             <span>Amyrobson</span>
           </div>
           <div id="user2">
-            <img
-              src="./images/avatars/image-juliusomo.png"
-              alt=""
-            />
+            <img src="./images/avatars/image-juliusomo.png" alt="" />
             <span>Juliusomo</span>
           </div>
           <div id="user3">
-            <img
-              src="./images/avatars/image-maxblagun.png"
-              alt=""
-            />
+            <img src="./images/avatars/image-maxblagun.png" alt="" />
             <span>maxblagun</span>
           </div>
           <div id="user4">
-            <img
-              src="./images/avatars/image-ramsesmiron.png"
-              alt=""
-            />
+            <img src="./images/avatars/image-ramsesmiron.png" alt="" />
             <span>Juliusomo</span>
           </div>
         </div>

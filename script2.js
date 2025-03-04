@@ -72,7 +72,7 @@ const D_E_R = (currentUser) => {
     const you = d.querySelector(".you");
 
     if (User === JSON.parse(localStorage.currentUser).username) {
-      console.log(JSON.parse(localStorage.currentUser).username);
+      // console.log(JSON.parse(localStorage.currentUser).username);
       Reply.classList.add("hidden");
       Delete.classList.remove("hidden");
       Edit.classList.remove("hidden");
