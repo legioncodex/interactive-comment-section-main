@@ -413,9 +413,15 @@ textarea::placeholder {
   }
   .comment-container {
     height: 71.9vh;
+    margin-top: 0;
   }
   .avatars {
     display: flex;
     gap: 0.3rem;
+  }
+
+  .toggle-header{
+    position: relative;
+    padding: 10px 30px;
   }
 }
