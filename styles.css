@@ -413,6 +413,7 @@ textarea::placeholder {
   }
   .comment-container {
     height: 71.9vh;
+    margin-bottom: 10px;
     margin-top: 0;
   }
   .avatars {
@@ -420,7 +421,7 @@ textarea::placeholder {
     gap: 0.3rem;
   }
 
-  .toggle-header{
+  .toggle-header {
     position: relative;
     padding: 10px 30px;
   }
