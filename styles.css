@@ -382,6 +382,19 @@ textarea::placeholder {
   gap: 0.5rem;
 }
 
+@media screen and (max-width: 970px) {
+  .toggle-header {
+    position: relative;
+    padding: 10px 30px;
+  }
+  
+  .comment-container {
+    height: 71.9vh;
+    margin-bottom: 200px;
+    margin-top: 0;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .comment {
     display: flex;
@@ -413,18 +426,11 @@ textarea::placeholder {
   .comment-input-wrp2 {
     padding-bottom: 0;
   }
-  .comment-container {
-    height: 71.9vh;
-    margin-bottom: 200px;
-    margin-top: 0;
-  }
+  
   .avatars {
     display: flex;
     gap: 0.3rem;
   }
 
-  .toggle-header {
-    position: relative;
-    padding: 10px 30px;
-  }
+  
 }
