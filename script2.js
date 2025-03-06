@@ -154,7 +154,7 @@ const flex = () => {
       element2ToAppend = document.createElement("div");
       element2ToAppend.classList.add("responsive-div");
     }
-    const button = input.querySelector("button");
+    const button = input.querySelector(".reply-cancel");
     const img = input.querySelector("img");
     if (window.innerWidth < thresholdWidth) {
       if (!input.contains(element2ToAppend)) {

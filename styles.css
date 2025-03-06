@@ -27,6 +27,9 @@ body {
   --Very-light-gray: hsl(228, 33%, 97%);
   --White: hsl(0, 0%, 100%);
   --toggle: #ccc;
+  --cancel: hsl(0, 0%, 40%);
+  --dialog: white;
+  --dialogue-text: #2b2b2b;
   /*  */
 }
 
@@ -42,6 +45,9 @@ body {
   --White: hsl(0, 0%, 10%);
   --text: hsl(0, 0%, 100%);
   --toggle: #2b2b2b;
+  --cancel: hsl(0, 0%, 60%);
+  --dialog: rgba(20, 20, 20, 0.9);
+  --dialog-text: #ccc;
   background-color: var(--Very-light-gray);
 }
 
@@ -311,6 +317,16 @@ textarea::placeholder {
   /* max-height: 450px; */
 }
 
+.reply-cancel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cancel-reply{
+  color: var(--cancel);
+}
+
 .comment-input-wrp2 > .comment-input {
   margin-top: 0;
   width: 700px;
@@ -351,7 +367,7 @@ textarea::placeholder {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: var(--dialog);
   padding: 20px;
   border-radius: 5px;
   text-align: center;
@@ -360,6 +376,7 @@ textarea::placeholder {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  color: var(--dialog-text);
 }
 
 .dialog-content > div {
@@ -434,6 +451,10 @@ textarea::placeholder {
   }
   .comment-input-wrp2 {
     padding-bottom: 0;
+  }
+
+  .reply-cancel{
+    flex-direction: row-reverse;
   }
   
   .avatars {
