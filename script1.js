@@ -74,10 +74,10 @@ const UI = (comments, currentUser) => {
 
   incrementDecrement(comments);
 
-  users(getUsers,comments);
+  users(getUsers, comments);
 
   document.querySelectorAll(".reply-input").forEach((replyButton) => {
-    replyButton.onclick= (event) => {
+    replyButton.onclick = (event) => {
       const replyInput = event.target.closest(".input-wrp");
       const temp = document
         .querySelector(".input-template")
@@ -96,10 +96,11 @@ const UI = (comments, currentUser) => {
           const commentText = textArea.value.trim();
           if (commentText) {
             const commentElement = replyInput.closest(".comment-wrp");
-            const commentId = parseInt(commentElement.getAttribute("data-id"));
+            const commentId = commentElement.getAttribute("data-id");
             const commentIndex = comments.findIndex(
-              (comment) => comment.id === commentId
+              (comment) => comment.id == commentId
             );
+            console.log(commentIndex);
 
             const repliedTo = event.target
               .closest(".input-wrp")
@@ -190,6 +191,5 @@ const UI = (comments, currentUser) => {
     } else {
       alert("Comment cannot be empty");
     }
-
   }
 };

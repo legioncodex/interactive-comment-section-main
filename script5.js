@@ -60,7 +60,7 @@ const shiftDown = (e) => {
 
 window.addEventListener("resize", flex);
 
-function users(getUsers,comments) {
+function users(getUsers, comments) {
   document.querySelector(".avatars").addEventListener("dblclick", () => {
     // document.querySelector(".avatars span").styles.display = "block";
     document.querySelectorAll(".comment-flex").forEach((input) => {
@@ -106,12 +106,11 @@ function users(getUsers,comments) {
                 const commentText = textArea.value.trim();
                 if (commentText) {
                   const commentElement = replyInput.closest(".comment-wrp");
-                  const commentId = parseInt(
-                    commentElement.getAttribute("data-id")
-                  );
-                  const commentIndex = comments.findIndex(
-                    (comment) => comment.id === commentId
-                  );
+                  const commentId = commentElement.getAttribute("data-id");
+                  const commentIndex = comments.findIndex((comment) => {
+                    console.log(comment.id, commentId);
+                    return comment.id === commentId;
+                  });
 
                   const repliedTo = event.target
                     .closest(".input-wrp")
@@ -159,4 +158,4 @@ function users(getUsers,comments) {
       };
     });
   });
-};
+}
