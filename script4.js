@@ -42,7 +42,15 @@ const Create = (comment, container, temp, comments) => {
 const button = document.querySelector("[data-theme-toggle]");
 const localStorageTheme = localStorage.getItem("theme");
 const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
-
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", () => {
+    currentThemeSetting = calculateSettingAsThemeString({
+      localStorageTheme,
+      systemSettingDark,
+    });
+    updateTheme({ theme: currentThemeSetting });
+  });
 console.log("System Dark Mode Preference:", systemSettingDark.matches);
 
 let currentThemeSetting = calculateSettingAsThemeString({
