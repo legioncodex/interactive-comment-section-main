@@ -2,7 +2,7 @@
   "name": "Comment App",
   "short_name": "Comments",
   "description": "A simple web app for commenting",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
