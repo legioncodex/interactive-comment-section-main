@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: Rubik;
   /* font-weight: 400; */
 }
@@ -84,13 +84,14 @@ button:hover {
 
 textarea {
   width: 100%;
-  min-height: 6rem;
+  min-height: calc((1.5em * 3.1) + 20px);
   border-radius: 10px;
-  padding: 15px;
+  padding: 10px;
   resize: none;
   font-family: Rubik;
+  font-size: 1rem;
   line-height: 1.5;
-  max-height: 8rem;
+  max-height: calc((1.5em * 5.1) + 20px);
 }
 textarea::placeholder {
   color: black;
@@ -111,7 +112,7 @@ textarea::placeholder {
   padding: 5px;
   border-radius: 34px;
   background-color: var(--toggle);
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .toggle-dark-light-mode {
@@ -120,16 +121,16 @@ textarea::placeholder {
   height: 26px;
   border-radius: 50%;
   background-color: #fff;
-  transition: .4s;
+  transition: 0.4s;
 }
 
-[data-theme="dark"] .toggle-dark-light-mode{
+[data-theme="dark"] .toggle-dark-light-mode {
   transform: translateX(26px);
 }
 
 .comment-container {
   max-width: 700px;
-  max-height: 73vh;
+  height: calc(100vh - (56px + 168px));
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -270,7 +271,7 @@ textarea::placeholder {
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
   border-left: 3px solid var(--Light-gray);
   /* border: 1px solid black; */
 }
@@ -317,13 +318,13 @@ textarea::placeholder {
   /* max-height: 450px; */
 }
 
-.reply-cancel{
+.reply-cancel {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.cancel-reply{
+.cancel-reply {
   color: var(--cancel);
 }
 
@@ -413,10 +414,10 @@ textarea::placeholder {
     position: relative;
     padding: 10px 30px;
   }
-  
+
   .comment-container {
-    height: 71.9vh;
-    margin-bottom: 200px;
+    height: calc(100vh - (56px + 190px));
+    margin-bottom: 188px;
     margin-top: 0;
   }
 }
@@ -453,14 +454,17 @@ textarea::placeholder {
     padding-bottom: 0;
   }
 
-  .reply-cancel{
+  .reply-cancel {
     flex-direction: row-reverse;
   }
-  
+
   .avatars {
     display: flex;
     gap: 0.3rem;
   }
 
-  
+  textarea {
+    height: calc((1.5em * 1.1) + 20px);
+    max-height: 4rem;
+  }
 }
